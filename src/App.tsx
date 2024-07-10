@@ -13,7 +13,7 @@ function App() {
         <PowerBIEmbed
           embedConfig={{
             type: "dashboard", // Supported types: report, dashboard, tile, visual, qna, paginated report and create
-            embedUrl: "https://playground.powerbi.com/sampleReportEmbed",
+            embedUrl: "https://app.fabric.microsoft.com/view?r=eyJrIjoiOTZjOTlkNTUtMDc4MS00YzFmLWE2ODItMjllMTdjZmM0OGFmIiwidCI6IjZmMGJiNzJmLTUzNzctNGRkZi05MzZhLWI2YzcyYmYyMWFlMiIsImMiOjF9",
             tokenType: models.TokenType.Embed, // Use models.TokenType.Aad for SaaS embed
             settings: {
               panes: {
