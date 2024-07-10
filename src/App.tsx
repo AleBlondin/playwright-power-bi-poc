@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import viteLogo from "/vite.svg";
+import "./App.css";
+import { PowerBIEmbed } from "powerbi-client-react";
+import { models } from "powerbi-client";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <PowerBIEmbed
+          embedConfig={{
+            type: "dashboard", // Supported types: report, dashboard, tile, visual, qna, paginated report and create
+            embedUrl: "https://playground.powerbi.com/sampleReportEmbed",
+            tokenType: models.TokenType.Embed, // Use models.TokenType.Aad for SaaS embed
+            settings: {
+              panes: {
+                filters: {
+                  expanded: false,
+                  visible: false,
+                },
+              },
+              background: models.BackgroundType.Transparent,
+            },
+          }}
+          eventHandlers={new Map([])}
+          cssClassName={"reportClass"}
+          getEmbeddedComponent={() => {}}
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

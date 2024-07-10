@@ -5,6 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  powerbi-client:
+    specifier: ^2.23.1
+    version: 2.23.1
+  powerbi-client-react:
+    specifier: ^1.4.0
+    version: 1.4.0(react@18.3.1)
   react:
     specifier: ^18.3.1
     version: 18.3.1
@@ -1108,6 +1114,10 @@ packages:
     resolution: {integrity: sha512-kK/4O/YunacfboFEk/BDf7VO1HoPmDudLTJAU9NmXIOSjsV7qVIX3OrI4REZo0VmdqhcpUcncQc6N8Q3aEXlHg==}
     dev: true
 
+  /es6-promise@3.3.1:
+    resolution: {integrity: sha512-SOp9Phqvqn7jtEUxPWdWfWoLmyt2VaJ6MpvP9Comy1MceMXqE6bxvaTu4iaxpYYPzhny28Lc+M87/c2cPK6lDg==}
+    dev: false
+
   /esbuild@0.21.5:
     resolution: {integrity: sha512-mg3OPMV4hXywwpoDxu3Qda5xCKQi+vCTZq8S9J/EpkhB2HzKXq4SNFZE3+NK93JYxc8VMSep+lOUSC/RVKaBqw==}
     engines: {node: '>=12'}
@@ -1409,6 +1419,12 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /http-post-message@0.2.3:
+    resolution: {integrity: sha512-76heerrzYhvWptJfWxUarHw2O3fkMqF48bbq/S6XFWHUc34o8tkySBwtReXuAKJAECZWVu8U0TYLckFcwtSdrg==}
+    dependencies:
+      es6-promise: 3.3.1
+    dev: false
+
   /ignore@5.3.1:
     resolution: {integrity: sha512-5Fytz/IraMjqpwfd34ke28PTVMjZjJG2MPn5t7OE4eUCUNf8BAa7b5WUS9/Qvr6mwOQS7Mk6vdsMno5he+T8Xw==}
     engines: {node: '>= 4'}
@@ -1519,6 +1535,10 @@ packages:
     dependencies:
       p-locate: 5.0.0
     dev: true
+
+  /lodash.isequal@4.5.0:
+    resolution: {integrity: sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==}
+    dev: false
 
   /lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
@@ -1658,9 +1678,45 @@ packages:
       source-map-js: 1.2.0
     dev: true
 
+  /powerbi-client-react@1.4.0(react@18.3.1):
+    resolution: {integrity: sha512-AfS96lP+emEc4drguCUqLG0s4cFa15OM9eqDaP1sJZ+ca0V+FdvFeI1bD6EyC3smPlpRcl862uSzYexVeUxdIQ==}
+    peerDependencies:
+      react: '>= 16'
+    dependencies:
+      lodash.isequal: 4.5.0
+      powerbi-client: 2.23.1
+      react: 18.3.1
+    dev: false
+
+  /powerbi-client@2.23.1:
+    resolution: {integrity: sha512-r04gDDq8YkrkZjSwOw4UBgzPwudXnA+x8B9ekVE7XDlhTDC7tujbcT15Z+iLDrx+49Bj4qVez0PgjA9CgEFpGw==}
+    dependencies:
+      http-post-message: 0.2.3
+      powerbi-models: 1.15.2
+      powerbi-router: 0.1.5
+      window-post-message-proxy: 0.2.9
+    dev: false
+
+  /powerbi-models@1.15.2:
+    resolution: {integrity: sha512-UcBLtBB2wa8pL412DxyVZvv/bKiUVJfLTCXAuGmIqnOkoA/EnYDUM3B8oS2piN1azyEN8pjN353rE9DeARCJtA==}
+    dev: false
+
+  /powerbi-router@0.1.5:
+    resolution: {integrity: sha512-DFJCKxwh/DqMZXtHSo6xZl87mbRviZGn4P7Oi2rT0L4HMI4AjnWIrwg0JCSM7ymBzYnNe5UmrsCaf2Upur5RQA==}
+    dependencies:
+      es6-promise: 3.3.1
+      route-recognizer: 0.1.11
+    dev: false
+
   /prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
+    dev: true
+
+  /prettier@3.3.2:
+    resolution: {integrity: sha512-rAVeHYMcv8ATV5d508CFdn+8/pHPpXeIid1DdrPwXnaAdH7cqjVbpJaT5eq4yRAFU/lsbwYwSF/n5iNrdJHPQA==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: true
 
   /punycode@2.3.1:
@@ -1737,6 +1793,10 @@ packages:
       '@rollup/rollup-win32-x64-msvc': 4.18.1
       fsevents: 2.3.3
     dev: true
+
+  /route-recognizer@0.1.11:
+    resolution: {integrity: sha512-7JNu5mXQVa39zxmUKyk/bfpeF2WyEC5JKVTJO5HATcoUQpcQsI3eLzhwGU69xeOagQxfOQ+yr2sSv0G8xy+vQA==}
+    dev: false
 
   /run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
@@ -1911,6 +1971,12 @@ packages:
     dependencies:
       isexe: 2.0.0
     dev: true
+
+  /window-post-message-proxy@0.2.9:
+    resolution: {integrity: sha512-hHmF5dvY27wy4EKN9c5qukPtzlbrdUzkMiCHud4gYKXCFAiGOBhCfi/dVBvwbUf0qrEGwFNnqkvk6DE54sdlcw==}
+    dependencies:
+      es6-promise: 3.3.1
+    dev: false
 
   /word-wrap@1.2.5:
     resolution: {integrity: sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==}

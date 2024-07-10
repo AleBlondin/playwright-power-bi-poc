@@ -3,6 +3,8 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+
+  width: 100%;
 }
 
 .logo {
@@ -39,4 +41,8 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.reportClass {
+  height: 700px;
 }
